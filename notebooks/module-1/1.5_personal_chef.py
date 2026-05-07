@@ -26,9 +26,10 @@ Return recipe suggestions and eventually the recipe instructions to the user, if
 """
 
 from langchain.agents import create_agent
+from minimax_model import get_model
 
 agent = create_agent(
-    model="gpt-5-nano",
+    model=get_model(),
     tools=[web_search],
     system_prompt=system_prompt
 )
